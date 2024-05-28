@@ -34,9 +34,7 @@ body {
   text-align: center;
   margin-top: 60px;
 }
-.search-bar {
-  margin-top: 10px;
-}
+ 
 .search-bar input {
   padding: 14px 10px;
   width: 300px;
@@ -105,12 +103,15 @@ input::placeholder{
     padding: 8px 5px;
     width: 200px;
     border: 0;
-    outline: 0;
+   
+  outline: 0;
     border-radius: 15px;
     font-size: 12px;
   }
   .search-bar button{
     padding: 8px 8px;
+    margin-left: 3px;
+
   }
   .city h1{
     margin-top: 16px;
@@ -118,5 +119,8 @@ input::placeholder{
   }
   .city h2{
     font-size: 45px;
+  }
+  .container{
+    padding: 8px 10px;
   }
 }

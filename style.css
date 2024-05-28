@@ -94,7 +94,12 @@ body {
 input::placeholder{
   text-transform: capitalize;
 }
-
+.error-msg{
+  display: none;
+}
+.error-img{
+  margin-top: 20px;
+}
 @media (max-width: 550px) {
   .search-bar input {
     padding: 8px 5px;

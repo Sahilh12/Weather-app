@@ -3,10 +3,14 @@ const button = document.querySelector('button')
 const cityName = document.querySelector('.city-name')
 const humidityNumber = document.querySelector('.humidity-number')
 const degree = document.querySelector('.degree')
- const windSpeedNumber = document.querySelector('.wind-speed-number')
- const description = document.querySelector('.description')
- const weatherImg = document.querySelector('.weather-img')
- 
+const windSpeedNumber = document.querySelector('.wind-speed-number')
+const description = document.querySelector('.description')
+const weatherImg = document.querySelector('.weather-img')
+const notFound = document.querySelector('.not-found')
+const errorImg = document.querySelector('.error-img')
+const errorMsg = document.querySelector('.error-msg')
+notFound.style.display = 'none'
+
 async function weather(){
     const city = input.value
     
@@ -14,10 +18,14 @@ async function weather(){
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}`
 
     const finalurl = await fetch(url).then((res) => res.json())
+    notFound.style.display = 'block'
+    errorMsg.style.display = 'none'
 
-        if(finalurl.cod === 404){
-            console.log('errr')
-        }
+    if(finalurl.cod === `404`){
+        errorMsg.style.display = 'block'
+        notFound.style.display = 'none'
+        console.log('errr')
+    }
         console.log(finalurl)
         cityName.innerText = finalurl.name
         humidityNumber.innerText = finalurl.main?.humidity + '%'

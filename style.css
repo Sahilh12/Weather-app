@@ -123,4 +123,7 @@ input::placeholder{
   .container{
     padding: 8px 10px;
   }
+  .error-img{
+    width: 70%;
+  }
 }
